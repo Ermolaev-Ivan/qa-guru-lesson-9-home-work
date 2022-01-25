@@ -10,16 +10,11 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static java.lang.String.format;
 
-public class PracticeFormTests {
+public class PracticeFormTests extends TestBase{
 
     RegistrationPage registrationPage = new RegistrationPage();
     TestData testData = new TestData();
 
-
-    @BeforeAll
-    static void beforeAll() {
-        Configuration.browserSize = "1920x1080";
-    }
 
     @Test
     void formTest() {

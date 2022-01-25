@@ -24,7 +24,7 @@ public class RegistrationPage {
         closeLargeModalButton = $("#closeLargeModal"),
         hobbiesCheckbox = $("#hobbiesWrapper");
 
-    String url_page_form = "https://demoqa.com/automation-practice-form";
+    String url_page_form = "/automation-practice-form";
 
     public CalendarComponent calendarComponent = new CalendarComponent();
 
