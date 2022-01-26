@@ -1,7 +1,5 @@
 package ivan.ermolaev.tests;
 
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import ivan.ermolaev.pages.RegistrationPage;
 
@@ -19,17 +17,6 @@ public class PracticeFormTests extends TestBase{
     @Test
     void formTest() {
 
-        String arr[] = new String[3];
-        arr[0] = "12";
-        arr[1] = "November";
-        arr[2] = "2000";
-//        String[] arr = {"19", "Jul", "1975"};
-
-//        System.out.println(arr);
-//        System.out.println(Arrays.toString(testData.date)); // Sat Jul 19 07:12:01 GMT+03:00 1975
-//        System.out.println(testData.dateFaker); // Sat Jul 19 07:12:01 GMT+03:00 1975
-        System.out.println(testData.dateFaker1);
-
         registrationPage
                 .openPage()
                 .setFirstName(testData.firstName)
@@ -37,14 +24,14 @@ public class PracticeFormTests extends TestBase{
                 .setEmail(testData.Email)
                 .choiceGender(testData.gender)
                 .setPhone(testData.phone)
-                .setBirthDate(arr)
+                .setBirthDate(testData.date)
                 .setSubjects("Physics")
                 .setSubjects("English")
                 .choiceCheckbox("Sports")
                 .choiceCheckbox("Reading")
                 .choiceCheckbox("Music")
                 .setCurrentAddress(testData.fullAddress)
-                .uploadPicture("Gordon.jpg")
+//                .uploadPicture("Gordon.jpg")
                 .setState("Rajasthan")
                 .setCity("Jaiselmer")
                 .sendFormButton();
@@ -55,10 +42,10 @@ public class PracticeFormTests extends TestBase{
                 text(testData.Email),
                 text(testData.gender),
                 text(testData.phone),
-                text(format("%s %s,%s", arr[0],arr[1],arr[2])),
+                text(format("%s %s,%s", testData.date[0],testData.date[1],testData.date[2])),
                 text("Physics, English"),
                 text("Sports, Reading, Music"),
-                text("Gordon.jpg"),
+//                text("Gordon.jpg"),
                 text(testData.fullAddress),
                 text("Rajasthan Jaiselmer"));
 
